@@ -1,0 +1,15 @@
+[
+	{
+		"directory": "${workspaceRoot}",
+		"arguments": [
+			"gcc",
+			"-g",
+			"-c",
+			"src/main.c",
+			"-o",
+			"obj/main.o"
+		],
+		"file": "src/main.c"
+	}
+]
+
