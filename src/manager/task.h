@@ -8,8 +8,8 @@
 
 typedef struct task {
 	int refCode;
-	char title[50];
-	char description[250];
+	char subject[50];
+	char account[250];
 	date shouldDate;
 	date isDate;
 	status status;

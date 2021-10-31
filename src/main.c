@@ -3,6 +3,7 @@
 #include"manager/manager.h"
 
 int main(int argc, char **argv) {
+	/*
 	task *list = NULL;
 	
 	task t1 = { .refCode = 10, .isEdit = true };
@@ -34,6 +35,16 @@ int main(int argc, char **argv) {
 	store_loadTask(&list, NULL, NULL);
 
 	test_printTasks(list);
+	*/
+
+	char *str = "append";
+
+	int index = 0;
+	printf("%d\n", str[0]);
+	index += str[0];
+	index += str[1];
+	index += str[2];
+	printf("index: %d\n", index);
 
 	return 0;
 }
