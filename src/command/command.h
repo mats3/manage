@@ -3,20 +3,25 @@
 
 #include<stdlib.h>
 #include<string.h>
+#include<strings.h>
 
-#define COMMAND_AMOUNT 2
+#include"../manager/task.h"
+#include"../manager/manager.h"
 
-#define INDEX_WIDTH 3
+#define INFO_SIZE 50
 
 struct parameter {
 	char sign;
 	int counter;
-	char info[50];
+	char info[INFO_SIZE];
 };
 
+#define IDENTIFIER_SIZE 10
+#define PARAMETERS_SIZE 10
+
 struct command {
-	char indentifier[10];
-	struct parameter parameters[10];
+	char identifier[IDENTIFIER_SIZE];
+	struct parameter parameters[PARAMETERS_SIZE];
 	int amountParameter;
 
 	void (*execute)(struct command *command);
@@ -46,6 +51,8 @@ struct command commandList[] = {
 	},
 };
 
-void command_execute(char *command);
+extern const int COMMAND_AMOUNT;
+
+void command_execute(char *input);
 
 #endif

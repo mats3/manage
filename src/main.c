@@ -1,6 +1,7 @@
 #include<stdio.h>
 
 #include"manager/manager.h"
+#include"command/command.h"
 
 int main(int argc, char **argv) {
 	/*
@@ -37,14 +38,8 @@ int main(int argc, char **argv) {
 	test_printTasks(list);
 	*/
 
-	char *str = "append";
 
-	int index = 0;
-	printf("%d\n", str[0]);
-	index += str[0];
-	index += str[1];
-	index += str[2];
-	printf("index: %d\n", index);
+	command_execute("append -sTitle-aBeschreibung-3d-t12001300");
 
 	return 0;
 }
