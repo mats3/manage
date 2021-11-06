@@ -1,8 +1,10 @@
 #include<stdio.h>
 
 #include"manager/manager.h"
+#include"command/command.h"
 
 int main(int argc, char **argv) {
+	/*
 	task *list = NULL;
 	
 	task t1 = { .refCode = 10, .isEdit = true };
@@ -34,6 +36,10 @@ int main(int argc, char **argv) {
 	store_loadTask(&list, NULL, NULL);
 
 	test_printTasks(list);
+	*/
+
+
+	command_execute("append -sTitle-aBeschreibung-3d-t12001300");
 
 	return 0;
 }

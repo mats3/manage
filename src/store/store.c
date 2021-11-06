@@ -5,8 +5,8 @@ FILE *store = NULL;
 void saveTask(task *task) {
 	fprintf(store, "(%d)(%s)(%s)(%d,%d,%d,%d,%d)(%d)(%d)\n",
 		task->refCode,
-		(task->title[0] == '\0') ?"NULL" :task->title,
-		(task->description[0] == '\0') ?"NULL" :task->description,
+		(task->subject[0] == '\0') ?"NULL" :task->subject,
+		(task->account[0] == '\0') ?"NULL" :task->account,
 		task->shouldDate.day,
 		task->shouldDate.month,
 		task->shouldDate.year,
@@ -63,8 +63,8 @@ void store_loadTask(task **head, date *from, date *to) {
 
 		fscanf(store, "(%d)(%[^)])(%[^)])(%d,%d,%d,%d,%d)(%d)(%d)",
 			&newTask->refCode,
-			newTask->title,
-			newTask->description,
+			newTask->subject,
+			newTask->account,
 			(int *)&newTask->shouldDate.day,
 			(int *)&newTask->shouldDate.month,
 			(int *)&newTask->shouldDate.year,

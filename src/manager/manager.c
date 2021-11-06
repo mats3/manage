@@ -86,8 +86,8 @@ void test_printTasks(task *tasks) {
 
 		fprintf(stdout, "(%d),(%s),(%s),(%d,%d,%d,%d,%d),(%d),(%d)",
 			tasks->refCode,
-			tasks->title,
-			tasks->description,
+			tasks->subject,
+			tasks->account,
 			tasks->shouldDate.day,
 			tasks->shouldDate.month,
 			tasks->shouldDate.year,
