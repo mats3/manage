@@ -6,7 +6,7 @@ lib_typ = .a
 
 cflags = $(compiler) -g -Wall -fpic
 
-sub_dirs = $(filter-out src/tests,$(filter-out $(wildcard src/*.c),$(wildcard src/*)))
+sub_dirs = $(filter-out src/tests $(wildcard src/*.c) $(wildcard src/*.h),$(wildcard src/*))
 objdirs = $(patsubst src/%,obj/%,$(sub_dirs))
 
 sublibs_path = $(patsubst obj/%,bin/lib%$(lib_typ),$(objdirs))
@@ -33,7 +33,7 @@ else
 all: gen_subdirs compile libs link
 
 $(bin): $(objs)
-	$(cflags) $(objs) -Lbin $(sublibs) -o $@
+	$(cflags) $(objs) -Lbin $(sublibs) -lncurses -o $@
 endif
 
 
@@ -55,7 +55,8 @@ clean:
 	rm bin/*
 
 init:
-	mkdir -p src/tests
+	mkdir tests
+	mkdir src
 	mkdir bin
 
 gen_subdirs:

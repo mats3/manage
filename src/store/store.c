@@ -7,11 +7,11 @@ void saveTask(task *task) {
 		task->refCode,
 		(task->subject[0] == '\0') ?"NULL" :task->subject,
 		(task->account[0] == '\0') ?"NULL" :task->account,
-		task->shouldDate.day,
-		task->shouldDate.month,
-		task->shouldDate.year,
-		task->shouldDate.time.hour,
-		task->shouldDate.time.minute,
+		task->should.end.day,
+		task->should.end.month,
+		task->should.end.year,
+		task->should.end.hour,
+		task->should.end.minute,
 		task->status,
 		task->isEdit);
 }
@@ -65,11 +65,11 @@ void store_loadTask(task **head, date *from, date *to) {
 			&newTask->refCode,
 			newTask->subject,
 			newTask->account,
-			(int *)&newTask->shouldDate.day,
-			(int *)&newTask->shouldDate.month,
-			(int *)&newTask->shouldDate.year,
-			(int *)&newTask->shouldDate.time.hour,
-			(int *)&newTask->shouldDate.time.minute,
+			(int *)&newTask->should.end.day,
+			(int *)&newTask->should.end.month,
+			(int *)&newTask->should.end.year,
+			(int *)&newTask->should.end.hour,
+			(int *)&newTask->should.end.minute,
 			(int *)&newTask->status,
 			(int *)&newTask->isEdit);
 

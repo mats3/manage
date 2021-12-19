@@ -2,7 +2,7 @@
 
 void task_setRefCode(task *task) {
 	task->refCode = 0;
-	task->refCode += task->shouldDate.day;
-	task->refCode += task->shouldDate.month * 100;
-	task->refCode += task->shouldDate.year * 10000;
+	task->refCode += task->should.end.day;
+	task->refCode += task->should.end.month * 100;
+	task->refCode += task->should.end.year * 10000;
 }

@@ -10,6 +10,8 @@
 
 #define INFO_SIZE 50
 
+#define TEST 0b0000001
+
 struct parameter {
 	char sign;
 	int counter;
@@ -29,8 +31,6 @@ struct command {
 
 void commandAppend(struct command *command);
 
-void commandShow(struct command *command);
-
 struct command commandList[] = {
 	{
 		"append",
@@ -41,13 +41,6 @@ struct command commandList[] = {
 			{ 't', 0, "" },
 		}, 5,
 		commandAppend
-	},
-	{ 
-		"show", 
-		{
-			{ 'd', 0, "" },
-		}, 5,
-		commandShow
 	},
 };
 
