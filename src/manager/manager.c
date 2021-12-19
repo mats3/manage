@@ -88,11 +88,11 @@ void test_printTasks(task *tasks) {
 			tasks->refCode,
 			tasks->subject,
 			tasks->account,
-			tasks->shouldDate.day,
-			tasks->shouldDate.month,
-			tasks->shouldDate.year,
-			tasks->shouldDate.time.hour,
-			tasks->shouldDate.time.minute,
+			tasks->should.end.day,
+			tasks->should.end.month,
+			tasks->should.end.year,
+			tasks->should.end.hour,
+			tasks->should.end.minute,
 			tasks->status,
 			tasks->isEdit);
 

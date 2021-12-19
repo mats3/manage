@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ui_cmd.h": "c",
+        "date.h": "c"
+    }
+}

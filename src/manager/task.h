@@ -6,12 +6,15 @@
 #include"date.h"
 #include"status.h"
 
+#define SUBJECT_SIZE 50
+#define ACCOUNT_SIZE 250
+
 typedef struct task {
 	int refCode;
-	char subject[50];
-	char account[250];
-	date shouldDate;
-	date isDate;
+	char subject[SUBJECT_SIZE];
+	char account[ACCOUNT_SIZE];
+	datePeriod should;
+	datePeriod is;
 	status status;
 	bool isEdit;
 
@@ -21,6 +24,6 @@ typedef struct task {
 
 void task_setRefCode(task *task);
 
-void manager_addTask(task **head, task *task);
+void manager_addTask(task **, task *);
 
 #endif

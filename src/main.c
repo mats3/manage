@@ -1,9 +1,12 @@
 #include<stdio.h>
-
-#include"manager/manager.h"
-#include"command/command.h"
+#include"ui_cmd/ui_cmd.h"
 
 int main(int argc, char **argv) {
+	ui_cmd_init();
+
+	return 0;
+}
+
 	/*
 	task *list = NULL;
 	
@@ -37,9 +40,3 @@ int main(int argc, char **argv) {
 
 	test_printTasks(list);
 	*/
-
-
-	command_execute("append -sTitle-aBeschreibung-3d-t12001300");
-
-	return 0;
-}

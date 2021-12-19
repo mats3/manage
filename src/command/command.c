@@ -3,17 +3,24 @@
 const int COMMAND_AMOUNT = sizeof(commandList) / sizeof(struct command);
 
 void commandAppend(struct command *command) {
-	task newTask;
-	strcpy(newTask.subject, command->parameters[0].info);
-	strcpy(newTask.account, command->parameters[1].info);
+	task *newTask = malloc(sizeof(task));
+	strcpy(newTask->subject, command->parameters[0].info);
+	strcpy(newTask->account, command->parameters[1].info);
+	if (command->parameters[2].info[0] == '\0') {
+		date_current(&newTask->should.end);
+		newTask->should.end.day += command->parameters[2].counter;
+	} else {
+		newTask->should.end.day = 10;
+		newTask->should.end.month = 8;
+		newTask->should.end.year = 2021;
+	}
 
-	newTask.status = NOT_STARTED;
+	newTask->pre = NULL;
+	newTask->next = NULL;
 
-	manager_addTask(&head, &newTask);
-}
+	newTask->status = NOT_STARTED;
 
-void commandShow(struct command *command) {
-
+	manager_addTask(&head, newTask);
 }
 
 void setIdentifier(char *input, char *identifier, int *inputPos) {
@@ -110,5 +117,4 @@ void command_execute(char *input) {
 	fillParameters(executeCommand, input, &inputPos);
 
 	executeCommand->execute(executeCommand);
-	bzero(executeCommand, sizeof(struct command));
 }
